@@ -1,8 +1,7 @@
-.idea/
+venv/
 __pycache__/
 *.pyc
 *.pyo
-venv/
 dist/
 build/
 *.egg-info/
