@@ -69,7 +69,7 @@ def analyze_code_with_gpt(target, token):
         f"Если ошибок нет, напиши, что код исправен. Ответь на русском языке:\n\n{code}"
     )
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
     )
     print(f"Осталось запросов: {remaining_requests}")
@@ -95,7 +95,7 @@ def suggest_fixes_with_gpt(target, token):
         f"Ответь на русском языке:\n\n{code}"
     )
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
     )
     print(f"Осталось запросов: {remaining_requests}")
@@ -119,7 +119,7 @@ def generate_fixed_code_with_gpt(target, token, output_file="fixed_code.py"):
         f"Исправь следующий Python-код и предоставь только исправленный код без комментариев и пояснений:\n\n{code}"
     )
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
     )
 
@@ -147,7 +147,7 @@ def check_code_pep8(target):
         f"Ответь на русском языке:\n\n{code}"
     )
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
     )
     return response.choices[0].message.content
